@@ -4,9 +4,16 @@ pipeline {
         stage ('Pull image from Docker Hub') {
             steps {
                 script {
-                    def dockerImage = 'sukanya996/ubuntu'
+                    def dockerImage = 'ubuntu'
                     sh "docker pull ${dockerImage}"
                     sh "docker images"
+                }
+            }                  
+        }
+        stage ('Run container') {
+            steps {
+                script {
+                    sh "docker run --name ubuntu ubuntu"
                 }
             }
         }

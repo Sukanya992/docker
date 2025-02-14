@@ -1,15 +1,15 @@
 pipeline {
-    agent any {
-        stages {
-            stage ('Pull image from dockerhub'){
-                steps {
-                    script {
-                        def dockerImage = 'sukanya996/ubuntu'
-                        sh "docker pull ${ubuntu}"
-                        sh "docker images"
-                    }
+    agent any 
+    stages {
+        stage ('Pull image from dockerhub') {
+            steps {
+                script {
+                    def dockerImage = 'sukanya996/ubuntu'
+                    sh "docker pull ${dockerImage}"
+                    sh "docker images"
                 }
             }
         }
     }
 }
+

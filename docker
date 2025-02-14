@@ -7,6 +7,7 @@ pipeline {
                     def dockerImage = 'ubuntu'
                     sh "docker pull ${dockerImage}"
                     sh "docker images"
+                    sh "docker run --name ubuntu dockerImage"
                 }
             }
         }

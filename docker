@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def dockerImage = 'sukanya996/ubuntu'
-                    sh "docker pull ${dockerImage}"
+                    sh "sudo docker pull ${dockerImage}"
                     sh "docker images"
                 }
             }

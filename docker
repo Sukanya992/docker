@@ -6,6 +6,7 @@ pipeline {
                     script {
                         def dockerImage = 'sukanya996/ubuntu'
                         sh "docker pull ${ubuntu}"
+                        sh "docker images"
                     }
                 }
             }

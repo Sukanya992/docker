@@ -28,5 +28,19 @@ pipeline {
                }
            }
         }
+        stage ('Tag image') {
+           steps {
+               script {
+                     sh "docker tag flaskapp sukanya996/flaskapp"
+               }
+           }
+        }
+        stage ('Push image') {
+           steps {
+               script {
+                    sh "docker push sukanya996/flaskapp"
+               }
+           }
+        }
     }
 }

@@ -21,13 +21,6 @@ pipeline {
                 sh "docker images"
             }
         }
-        stage ('Run Container') {
-           steps {
-               script {
-                    sh "docker run --name flask flaskapp"
-               }
-           }
-        }
         stage ('Tag image') {
            steps {
                script {

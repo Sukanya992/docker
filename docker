@@ -9,6 +9,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Sukanya992/docker.git'
             }
         }
+    stage('Login to Docker Hub') {
+         steps {
+             script {
+            sh 'docker login -u "sukanya996" -p "your-docker-hub-password"'
+             }
+         }
+    }
+
         stage('Build Docker Image') {
             steps {
                 script {
